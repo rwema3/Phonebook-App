@@ -17,11 +17,10 @@ void gotoxy(int x,int y){
 	c.Y=y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
 }
-
 int main(){
 	system("color B");
 	password();
-	getch();	
+	getch();
 }
 
 void namefun(){
@@ -128,9 +127,9 @@ void searchfun(){
 			system("cls");
 			searchfun();
 		}
-	
+
 	}
-	
+
 
 	fclose(fptr);
 }
@@ -145,7 +144,7 @@ void listfun(){
 	printf("\xB3\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xDB LIST SECTION OPENED \xDB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xB3");
 	printf("\n");
 	while(fscanf(fptr,"%s %s %s %s %lf",name,address,gender,gmail,&phone)!=EOF){
-		
+
 			printf("------------------------------------------\n");
 		printf("Name:%s\n",name);
 		printf("Address:%s\n",address);
@@ -198,7 +197,7 @@ void modifyfun(){
 			printf("Enter the new phone number:");
 			scanf("%lf",&phone1);
 			fprintf(fptr1,"%s %s %s %s %.0lf\n",name,address1,gender1,gmail1,phone1);
-			
+
 		}else{
 			fprintf(fptr1,"%s %s %s %s %.0lf\n",name,address,gender,gmail,phone);
 		}
@@ -214,9 +213,9 @@ void modifyfun(){
 	fptr1=fopen("temp.txt","r");
 	while(fscanf(fptr1,"%s %s %s %s %lf\n",name,address,gender,gmail,&phone)!=EOF){
 		fprintf(fptr,"%s %s %s %s %.0lf\n",name,address,gender,gmail,phone);
-		
+
 	}
-	
+
 	fclose(fptr);
 	fclose(fptr1);
 	fptr1=fopen("temp.txt","w");
@@ -245,7 +244,7 @@ void deletefun(){
 		{
 			f=1;
 			printf("Record deleted successfully");
-			
+
 		}else{
 			fprintf(fptr1,"%s %s %s %s %.0lf\n",name,address,gender,gmail,phone);
 		}
@@ -261,9 +260,9 @@ void deletefun(){
 	fptr1=fopen("temp.txt","r");
 	while(fscanf(fptr1,"%s %s %s %s %lf\n",name,address,gender,gmail,&phone)!=EOF){
 		fprintf(fptr,"%s %s %s %s %.0lf\n",name,address,gender,gmail,phone);
-		
+
 	}
-	
+
 	fclose(fptr);
 	fclose(fptr1);
 	fptr1=fopen("temp.txt","w");
@@ -333,9 +332,9 @@ void password(void){
 		system("cls");
 		password();
 }
-	
+
 }
-	
+
 
 void menu(){
 	system("cls");
@@ -378,5 +377,3 @@ void menu(){
 			getch();
 }
 }
-
-
